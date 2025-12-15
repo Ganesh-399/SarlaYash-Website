@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SarlaYash — Programs & Solutions</title>
+<style>
+  :root{
+    --bg-0:#050617;
+    --bg-1:#0b1220;
+    --card:#0f1726;
+    --muted:#9ca3af;
+    --text:#eef2ff;
+    --accent1:#f97316;
+    --accent2:#facc15;
+    --accent-grad:linear-gradient(135deg,var(--accent1),var(--accent2));
+    --glass: rgba(255,255,255,0.04);
+    --radius:16px;
+    --pad:1.1rem;
+    --container:1100px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(circle at top left, #0e1724 0%, #03040a 60%);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+  }
+
+  /* header */
+  header{
+    position:sticky; top:0; z-index:40;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to bottom, rgba(6,7,12,0.75), rgba(6,7,12,0.45));
+    border-bottom:1px solid rgba(255,255,255,0.03);
+    padding:14px 20px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{display:flex; gap:12px; align-items:center}
+  .logo-mark{width:40px;height:40px;border-radius:10px;background:conic-gradient(from 180deg,var(--accent1),#22c55e,#06b6d4,#6366f1,var(--accent1));display:flex;align-items:center;justify-content:center;font-weight:800;color:#071024}
+  .brand h1{font-size:16px;margin:0}
+  nav{display:flex;gap:8px;align-items:center}
+  nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:999px;font-size:14px}
+  nav a.active{background:var(--accent-grad);color:#071024;font-weight:600}
+
+  .wrap{max-width:var(--container);margin:28px auto;padding:0 20px}
+
+  /* Hero (section 1) — big intro with gradient card */
+  .hero{
+    display:grid; grid-template-columns:1fr 360px; gap:22px; align-items:stretch;
+  }
+  .hero-left{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:var(--radius); padding:calc(var(--pad) + 8px);
+    border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 14px 40px rgba(5,8,15,0.6);
+  }
+  .kicker{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px;margin-bottom:10px}
+  .hero-left h2{margin:4px 0 10px;font-size:24px}
+  .hero-left p{color:var(--muted);margin-bottom:12px}
+  .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:var(--text);text-decoration:none}
+  .btn.primary{background:var(--accent-grad);color:#071024;font-weight:700;border:none;box-shadow:0 12px 30px rgba(249,115,22,0.14)}
+
+  /* Hero right — mosaic highlight */
+  .hero-right{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .hero-right h3{margin:0 0 8px 0;font-size:16px}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(34,197,94,0.08);color:#c7f7d7;font-weight:600;font-size:13px}
+
+  /* Features grid (section 2) — icon tiles */
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+  .tile{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+  .tile h4{margin:8px 0 6px}
+  .tile p{color:var(--muted);font-size:14px;margin:0}
+
+  /* Executive section (split image + bullets) */
+  .exec{
+    display:grid;grid-template-columns:1fr 300px;gap:18px;align-items:center;margin-top:22px;
+  }
+  .exec-left{padding:18px;background:linear-gradient(90deg, rgba(249,115,22,0.06), rgba(250,204,21,0.03));border-radius:14px;border:1px solid rgba(255,255,255,0.02)}
+  .exec-left h3{margin-top:0}
+  .exec-list{display:grid;gap:8px;margin-top:12px}
+  .bullet{display:flex;gap:10px;align-items:flex-start}
+  .dot{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;background:#071024;border:1px solid rgba(255,255,255,0.04)}
+
+  .exec-side{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
+  .exec-side img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* Corporate — horizontal ribbon with icons */
+  .corp{margin-top:22px;padding:16px;border-radius:14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+  .corp-list{display:flex;gap:12px;flex-wrap:wrap}
+  .corp-item{flex:1 1 160px;min-width:160px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+  .corp-item h4{margin:0 0 6px}
+
+  /* University — vertical timeline */
+  .timeline{margin-top:22px;position:relative;padding-left:24px}
+  .timeline::before{content:'';position:absolute;left:12px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--accent1),var(--accent2));border-radius:2px;opacity:0.9}
+  .event{position:relative;padding:12px 12px 12px 28px;margin-bottom:18px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+  .event .mark{position:absolute;left:-2px;top:12px;width:20px;height:20px;border-radius:50%;background:#071024;border:4px solid var(--accent1)}
+
+  /* Individual development — mosaic cards */
+  .indv{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:22px}
+  .card-small{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .card-small h4{margin:0 0 6px}
+
+  /* Ethic callout */
+  .callout{margin-top:22px;background:linear-gradient(90deg, rgba(34,197,94,0.06), rgba(6,182,212,0.03));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+  .callout h3{margin:0 0 6px}
+  .muted{color:var(--muted)}
+
+  /* footer */
+  footer{max-width:var(--container);margin:28px auto;padding:18px 20px;text-align:center;color:var(--muted)}
+  footer .brand{justify-content:center}
+
+  /* responsiveness */
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr; }
+    .exec{grid-template-columns:1fr; }
+    .exec-side{height:160px}
+    .features{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:560px){
+    .features{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo-mark">SY</div>
+      <div>
+        <h1 style="font-size:14px;margin:0">SarlaYash</h1>
+        <div style="font-size:12px;color:var(--muted)">Learning • Leadership • Legacy</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="foundation.html">Foundation</a>
+      <a href="students.html">Students</a>
+      <a class="active" href="programs.html">Programs</a>
+      <a href="founder.html">Founder</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <!-- HERO / Overview (unique gradient card) -->
+    <section class="hero">
+      <div class="hero-left">
+        <span class="kicker">Our Programs & Solutions</span>
+        <h2>Programs designed for transformative learning</h2>
+        <p class="muted">SarlaYash Learning Solutions LLP combines foundational principles with modern methodologies to empower individuals and organisations.</p>
+
+        <div class="hero-cta" style="margin-top:12px">
+          <a class="btn primary" href="#exec">Explore Executive</a>
+          <a class="btn" href="#corp">Corporate Training</a>
+          <a class="btn" href="#univ">University Partnerships</a>
+        </div>
+
+        <!-- features grid inside hero -->
+        <div class="features" style="margin-top:18px">
+          <div class="tile">
+            <div style="font-size:18px">📈</div>
+            <h4>Driving Growth</h4>
+            <p>Tailored programs that unlock potential and drive measurable success.</p>
+          </div>
+          <div class="tile">
+            <div style="font-size:18px">🤝</div>
+            <h4>Human-Centred Design</h4>
+            <p>Learning journeys built around real learner contexts and organisational goals.</p>
+          </div>
+          <div class="tile">
+            <div style="font-size:18px">🌱</div>
+            <h4>Ethical Leadership</h4>
+            <p>Programs emphasise values, integrity and sustainable impact.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h3 style="margin:0">Why our programs?</h3>
+          <div class="pill">Real outcomes</div>
+        </div>
+        <p class="muted" style="margin-top:10px">We co-create journeys rather than pushing one-size-fits-all content — measurable, mentor-led, and values-first.</p>
+
+        <!-- quick links -->
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+          <a class="btn" href="#exec">Executive Education — details →</a>
+          <a class="btn" href="#corp">Corporate Training — details →</a>
+          <a class="btn" href="#univ">University Partnerships — details →</a>
+          <a class="btn" href="#indv">Individual Development — details →</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- EXECUTIVE (distinct split layout with image) -->
+    <section id="exec" class="exec">
+      <div class="exec-left page-card">
+        <h3>Executive Education</h3>
+        <p class="muted">For senior leaders — refine strategy, foster ethical decision-making and lead organisational transformation.</p>
+
+        <div class="exec-list">
+          <div class="bullet"><div class="dot">🧭</div><div><strong>Strategic leadership</strong><div class="muted">Navigate complexity with clarity.</div></div></div>
+          <div class="bullet"><div class="dot">🧠</div><div><strong>Advanced decision-making</strong><div class="muted">Frameworks for high-stakes choices.</div></div></div>
+          <div class="bullet"><div class="dot">🌐</div><div><strong>Global business insights</strong><div class="muted">Contextual awareness for scale.</div></div></div>
+          <div class="bullet"><div class="dot">🚀</div><div><strong>Innovation & change management</strong><div class="muted">Lead sustainable transformation.</div></div></div>
+        </div>
+      </div>
+
+      <div class="exec-side">
+        <!-- placeholder image block (replace src with your image) -->
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b8f8b9d3f2c7f9e5a6c" alt="Executive program">
+      </div>
+    </section>
+
+    <!-- CORPORATE (ribbon tiles) -->
+    <section id="corp" class="corp page-card">
+      <h3 style="margin-top:0">Corporate Training</h3>
+      <p class="muted">Tailored initiatives to enhance team performance and cultivate a learning culture.</p>
+
+      <div class="corp-list" style="margin-top:12px">
+        <div class="corp-item">
+          <h4>Team collaboration</h4>
+          <p class="muted">Workshops and labs to improve cross-functional teamwork.</p>
+        </div>
+        <div class="corp-item">
+          <h4>Skill enhancement</h4>
+          <p class="muted">Role-specific upskilling with measured outcomes.</p>
+        </div>
+        <div class="corp-item">
+          <h4>Customized learning</h4>
+          <p class="muted">Programs built around your context and KPIs.</p>
+        </div>
+        <div class="corp-item">
+          <h4>Employee engagement</h4>
+          <p class="muted">Sustained learning pathways to grow retention and ownership.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIVERSITY (timeline style) -->
+    <section id="univ" class="page-card">
+      <h3 style="margin-top:0">University Partnerships</h3>
+      <p class="muted">Collaborative frameworks bridging academic excellence with industry application.</p>
+
+      <div class="timeline">
+        <div class="event">
+          <div class="mark"></div>
+          <strong>Applied research</strong>
+          <div class="muted">Project-based research with real-world sponsors.</div>
+        </div>
+
+        <div class="event">
+          <div class="mark"></div>
+          <strong>Curriculum co-creation</strong>
+          <div class="muted">Design industry-aligned modules with faculty.</div>
+        </div>
+
+        <div class="event">
+          <div class="mark"></div>
+          <strong>Internship placements</strong>
+          <div class="muted">Supervised internships that convert to experience.</div>
+        </div>
+
+        <div class="event">
+          <div class="mark"></div>
+          <strong>Talent pipeline development</strong>
+          <div class="muted">Long-term industry-campus collaboration for skills pipeline.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDIVIDUAL (mosaic cards) -->
+    <section id="indv" class="indv">
+      <div class="card-small page-card">
+        <h4>Personalized skill mastery</h4>
+        <p class="muted">Micro-pathways to level-up technical and soft skills.</p>
+      </div>
+      <div class="card-small page-card">
+        <h4>Career advancement strategies</h4>
+        <p class="muted">Resume, interview, and portfolio guidance that works.</p>
+      </div>
+      <div class="card-small page-card">
+        <h4>Mentorship & coaching</h4>
+        <p class="muted">One-on-one guidance from experienced practitioners.</p>
+      </div>
+      <div class="card-small page-card">
+        <h4>Holistic growth</h4>
+        <p class="muted">Balance technical growth with personal development.</p>
+      </div>
+    </section>
+
+    <!-- CALLOUT (ethics & values) -->
+    <section class="callout page-card">
+      <h3>Ethical Leadership & Holistic Development</h3>
+      <p class="muted">Our programs focus on ethical leadership and holistic development, ensuring participants achieve success and become values-driven individuals.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <a class="btn" href="contact.html">Request a collaboration</a>
+        <a class="btn primary" href="https://razorpay.me/@sarlayash">Register / Learn more</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="brand" style="justify-content:center;gap:10px">
+      <div class="logo-mark">SY</div>
+      <div>
+        <div style="font-weight:700">SarlaYash Learning Solutions LLP</div>
+        <div style="font-size:13px;color:var(--muted)">Learning • Leadership • Legacy</div>
+      </div>
+    </div>
+    <div style="margin-top:12px;color:var(--muted)">© <span id="yr"></span> All rights reserved.</div>
+  </footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

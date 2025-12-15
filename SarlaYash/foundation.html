@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SarlaYash – Our Guiding Foundation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- You can move this CSS to a shared style.css if you want; keeping inline for now -->
+  <style>
+    /* same base styles as index, but slightly simpler layout */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.65),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 0.85rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 14px;
+      background: conic-gradient(
+        from 180deg,
+        #f97316,
+        #facc15,
+        #22c55e,
+        #06b6d4,
+        #6366f1,
+        #f97316
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.5);
+      font-size: 0.9rem;
+      color: #020617;
+      font-weight: 800;
+    }
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 1rem;
+    }
+    .logo-sub {
+      font-size: 0.72rem;
+      color: #9ca3af;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #9ca3af;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: 0.18s;
+    }
+    nav a:hover {
+      background: rgba(15, 23, 42, 0.7);
+      border-color: rgba(148, 163, 184, 0.4);
+      color: #f9fafb;
+      transform: translateY(-1px);
+    }
+    nav a.active {
+      background: linear-gradient(135deg, #f97316, #facc15);
+      color: #111827;
+      font-weight: 600;
+    }
+    main {
+      max-width: 780px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.5rem 2rem;
+    }
+    .page-card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 18px;
+      padding: 1.8rem 1.6rem 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 1.7rem;
+      margin-bottom: 0.8rem;
+    }
+    h2 {
+      margin-top: 1.5rem;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+    p {
+      margin-bottom: 0.6rem;
+      font-size: 0.96rem;
+    }
+    ul {
+      padding-left: 1.25rem;
+      font-size: 0.93rem;
+    }
+    li {
+      margin-bottom: 0.35rem;
+    }
+    strong {
+      color: #f97316;
+    }
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.9rem;
+    }
+    .breadcrumb a {
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 1.3rem 1rem 2.5rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      border-top: 1px solid rgba(15, 23, 42, 0.95);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
+    }
+    footer span.brand-footer {
+      font-weight: 600;
+      background: linear-gradient(135deg, #f97316, #facc15);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="brand-mark">SY</div>
+    <div>
+      <div class="logo-text-main">SarlaYash</div>
+      <div class="logo-sub">Learning • Leadership • Legacy</div>
+    </div>
+  </div>
+  <nav>
+    <a class="active" href="foundation.html">Foundation</a>
+    <a href="students.html">Students</a>
+    <a href="programs.html">Programs</a>
+    <a href="founder.html">Founder</a>
+    <a href="challenge.html">Wall of Fame</a>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main>
+  <div class="page-card">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> / Foundation
+    </div>
+    <h1>Our Guiding Foundation</h1>
+    <p>
+      The name <strong>SarlaYash</strong> is a tribute to Maa Sarla and Paa Yash.
+      Their lives modelled integrity, empathy and a quiet commitment to learning.
+      These are not just words in our philosophy deck — they are the reference
+      points for what we say “yes” or “no” to as an organisation.
+    </p>
+    <h2>Principles that shape every program</h2>
+    <ul>
+      <li><strong>Integrity:</strong> We design and deliver in a way that we can explain with pride to the next generation.</li>
+      <li><strong>Empathy:</strong> We recognise that each learner brings a different story, pace and starting point.</li>
+      <li><strong>Lifelong learning:</strong> Our work is to keep curiosity alive, not to close the book after a certificate.</li>
+      <li><strong>Holistic growth:</strong> Skills, mindset and values move together — not in isolation.</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span> <span class="brand-footer">SarlaYash Learning Solutions LLP</span>.
+  All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

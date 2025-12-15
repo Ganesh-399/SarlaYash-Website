@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SarlaYash – Student Journeys</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* Base layout (matching your site) */
+    :root{
+      --bg1: #1e293b;
+      --card-bg: rgba(15,23,42,0.92);
+      --muted: #9ca3af;
+      --text: #e5e7eb;
+      --accent-start: #f97316;
+      --accent-end: #facc15;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, var(--bg1) 0, #020617 55%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.9), rgba(15,23,42,0.65), transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.25);
+      padding: 0.85rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand { display:flex; align-items:center; gap:0.6rem; }
+    .brand-mark {
+      width:32px; height:32px; border-radius:14px;
+      background: conic-gradient(from 180deg, var(--accent-start), var(--accent-end), #22c55e, #06b6d4, #6366f1, var(--accent-start));
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 10px 25px rgba(249,115,22,0.5); color:#020617; font-weight:800;
+    }
+    .logo-text-main { font-weight:700; letter-spacing:0.04em; font-size:1rem; }
+    .logo-sub { font-size:0.72rem; color:var(--muted); }
+
+    nav { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
+    nav a {
+      text-decoration:none; color:var(--muted); font-size:0.85rem;
+      padding:0.4rem 0.9rem; border-radius:999px; border:1px solid transparent;
+      display:inline-flex; gap:0.35rem; transition:0.18s;
+    }
+    nav a:hover { background: rgba(15,23,42,0.7); border-color: rgba(148,163,184,0.4); color:var(--text); transform:translateY(-1px); }
+    nav a.active { background: linear-gradient(135deg,var(--accent-start),var(--accent-end)); color:#111827; font-weight:600; }
+
+    /* On-page quick nav */
+    .onpage-nav {
+      max-width: 780px; margin: 1.25rem auto 0; padding: 0 1.5rem;
+    }
+    .onpage-nav .links {
+      background: rgba(15,23,42,0.92); border-radius:12px; padding:0.8rem;
+      display:flex; gap:8px; flex-wrap:wrap; align-items:center; border:1px solid rgba(148,163,184,0.06);
+    }
+    .onpage-nav a { color:var(--text); text-decoration:none; padding:6px 10px; border-radius:999px; font-size:0.9rem; border:1px solid rgba(148,163,184,0.06); }
+    .onpage-nav a:hover { opacity:0.95; transform:translateY(-2px); }
+
+    main { max-width:780px; margin:1.25rem auto 3rem; padding:0 1.5rem 2rem; }
+
+    .page-card {
+      background: var(--card-bg); border-radius:18px; padding:1.6rem;
+      border: 1px solid rgba(148,163,184,0.06); box-shadow: 0 18px 45px rgba(15,23,42,0.95);
+      margin-bottom:1rem;
+    }
+
+    h1 { margin:0 0 0.6rem 0; font-size:1.6rem; }
+    h2 { margin:0 0.6rem 0.6rem 0; font-size:1.05rem; color:var(--text); }
+    p { margin:0 0 0.8rem 0; color:var(--text); }
+    ul { padding-left:1.25rem; margin:0 0 0.8rem 0; color:var(--text); }
+    li { margin-bottom:0.4rem; }
+
+    .breadcrumb { font-size:0.85rem; color:var(--muted); margin-bottom:0.8rem; }
+    .breadcrumb a { color:var(--text); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+
+    footer {
+      text-align:center; padding:1.3rem 1rem 2.5rem; font-size:0.75rem; color:var(--muted);
+      border-top:1px solid rgba(15,23,42,0.95); background: radial-gradient(circle at top, rgba(15,23,42,0.9), #020617);
+    }
+    footer .brand-footer { font-weight:600; background: linear-gradient(135deg,var(--accent-start),var(--accent-end)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+    @media (max-width:700px){
+      header { flex-direction:column; align-items:flex-start; gap:0.8rem; }
+      .onpage-nav .links { justify-content:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-mark">SY</div>
+      <div>
+        <div class="logo-text-main">SarlaYash</div>
+        <div class="logo-sub">Learning • Leadership • Legacy</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="foundation.html">Foundation</a>
+      <a class="active" href="students.html">Students</a>
+      <a href="programs.html">Programs</a>
+      <a href="founder.html">Founder</a>
+      <a href="challenge.html">Wall of Fame</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <!-- In-page quick links -->
+  <div class="onpage-nav" aria-label="Jump to sections">
+    <div class="links">
+      <strong style="color:var(--muted); margin-right:8px;">Jump to</strong>
+      <a href="#why">Overview</a>
+      <a href="#learning">Learning</a>
+      <a href="#mentorship">Mentorship</a>
+      <a href="#growth">Growth</a>
+      <a href="#values">Values</a>
+      <a href="#trust">Trust</a>
+      <a href="#connection">Connection</a>
+      <a href="#career">Career</a>
+      <a href="#essence">Essence</a>
+      <a href="#what">What We Represent</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Overview -->
+    <section id="why" class="page-card">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Students</div>
+      <h1>🌟 Why Students Are Choosing SarlaYash</h1>
+      <p>
+        At SarlaYash, we believe learning is not confined to classrooms — it evolves through experience, mentorship, and purpose.
+        Here's what our students shared before joining their internship journey with us:
+      </p>
+    </section>
+
+    <!-- Learning -->
+    <section id="learning" class="page-card">
+      <h2>For Learning and Real-World Exposure</h2>
+      <ul>
+        <li>"I want to gain hands-on experience and understand how real projects work."</li>
+        <li>"It's a great platform to apply college learning to real-world challenges."</li>
+        <li>"I'm excited because SarlaYash provides an environment for innovation, collaboration, and continuous learning."</li>
+      </ul>
+      <p>Students see SarlaYash as a bridge between academics and industry, where theoretical knowledge transforms into practical problem-solving.</p>
+    </section>
+
+    <!-- Mentorship -->
+    <section id="mentorship" class="page-card">
+      <h2>For Mentorship Under Kapil Sir</h2>
+      <ul>
+        <li>"Kapil Sir's teaching always went beyond the syllabus — focusing on real-world learning."</li>
+        <li>"Working under him will help me gain the experience needed to succeed in life."</li>
+        <li>"Learning under a kind, motivating teacher like Kapil Sir is an opportunity in itself."</li>
+      </ul>
+      <p>Your leadership, Kapil, is at the heart of why students trust SarlaYash. They see you not only as a teacher and mentor, but as an inspiration for purpose-driven learning.</p>
+    </section>
+
+    <!-- Growth -->
+    <section id="growth" class="page-card">
+      <h2>For Growth and Self-Development</h2>
+      <ul>
+        <li>"SarlaYash helps students grow both technically and personally."</li>
+        <li>"It's a platform for newcomers in the industry to evolve and gain confidence."</li>
+        <li>"I want to contribute while learning — it's about evolution, not just education."</li>
+      </ul>
+      <p>Students view SarlaYash as a launchpad for growth — where every challenge becomes an opportunity to learn, innovate, and lead.</p>
+    </section>
+
+    <!-- Values -->
+    <section id="values" class="page-card">
+      <h2>For Values and Vision</h2>
+      <ul>
+        <li>"SarlaYash stands for honesty, simplicity, and innovation."</li>
+        <li>"The philosophy of purpose-driven education inspires me."</li>
+        <li>"I believe in achieving success through simplicity and integrity — values that define SarlaYash."</li>
+      </ul>
+      <p>They're not just attracted by projects — but by principles. Your brand stands for values with vision, blending timeless ethics with modern innovation.</p>
+    </section>
+
+    <!-- Trust -->
+    <section id="trust" class="page-card">
+      <h2>For Trust and Faculty Recommendation</h2>
+      <ul>
+        <li>"Our professors recommended SarlaYash."</li>
+        <li>"I've heard about its growth and the real-world projects students work on."</li>
+        <li>"It's trusted by faculty and admired by learners."</li>
+      </ul>
+      <p>The academic community recognizes SarlaYash as a trusted learning ecosystem, where students are guided with care and excellence.</p>
+    </section>
+
+    <!-- Connection -->
+    <section id="connection" class="page-card">
+      <h2>For Personal Connection and Inspiration</h2>
+      <ul>
+        <li>"I had the privilege of learning from the founder himself."</li>
+        <li>"I loved the classroom vibe and now want to experience the same energy through this internship."</li>
+        <li>"Seeing my teacher's vision in action inspires me to be a part of it."</li>
+      </ul>
+      <p>For many, joining SarlaYash feels like continuing the journey of learning they began with you.</p>
+    </section>
+
+    <!-- Career -->
+    <section id="career" class="page-card">
+      <h2>For Career Readiness and Opportunity</h2>
+      <ul>
+        <li>"It'll help me improve my resume and placement chances."</li>
+        <li>"I want to earn experience, exposure, and confidence before entering the job world."</li>
+        <li>"This is the best place to kickstart my professional journey."</li>
+      </ul>
+      <p>Students see this internship as their first big step — towards career readiness, confidence, and purpose-driven contribution.</p>
+    </section>
+
+    <!-- Essence -->
+    <section id="essence" class="page-card">
+      <h2>✨ The Essence of Their Sentiment</h2>
+      <p>"SarlaYash is not just a company — it's a movement that turns learning into transformation."</p>
+      <ul>
+        <li>A hands-on, mentorship-driven culture</li>
+        <li>The trust of educators and institutions</li>
+        <li>The vision of purposeful learning led by Kapil Sir</li>
+        <li>A space that blends innovation, integrity, and impact</li>
+      </ul>
+    </section>
+
+    <!-- What we represent -->
+    <section id="what" class="page-card">
+      <h2>🌍 What SarlaYash Represents</h2>
+      <p>"At SarlaYash, we elevate human potential. Our experiences go beyond conventional learning, shaping leaders with empathy, imagination, and purpose."</p>
+      <p>SarlaYash isn't just an internship. It's a journey from knowledge to wisdom, from learning to leadership.</p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> <span class="brand-footer">SarlaYash Learning Solutions LLP</span>. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

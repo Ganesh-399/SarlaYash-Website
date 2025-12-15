@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SarlaYash – Learning • Leadership • Legacy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --accent: #f97316;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.65),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 0.85rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* ✅ LOGO REPLACED */
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(249, 115, 22, 0.45);
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 1rem;
+    }
+
+    .logo-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      transition: 0.18s;
+    }
+
+    nav a.primary {
+      background: linear-gradient(135deg, #f97316, #facc15);
+      color: #111827;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text-main);
+    }
+
+    .hero {
+      max-width: 1060px;
+      margin: 3.5rem auto 2.5rem;
+      padding: 2.5rem 1.75rem 2.75rem;
+      border-radius: 26px;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.92));
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      display: grid;
+      gap: 2.5rem;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3vw + 1rem, 2.9rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #f97316, #facc15);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(148, 163, 184, 0.8);
+    }
+
+    .hero-right-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 1.25rem 1.35rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.3rem 1rem 2.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(15, 23, 42, 0.95);
+    }
+
+    footer .brand-footer {
+      font-weight: 600;
+      background: linear-gradient(135deg, #f97316, #facc15);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <!-- ✅ LOGO INSTEAD OF SY -->
+    <div class="brand-logo">
+      <img src="SYLSLLPLogo.jpg" alt="SarlaYash Logo">
+    </div>
+    <div>
+      <div class="logo-text-main">SarlaYash</div>
+      <div class="logo-sub">Learning • Leadership • Legacy</div>
+    </div>
+  </div>
+
+  <nav>
+    <a class="primary" href="foundation.html">✨ Foundation</a>
+    <a href="students.html">🎓 Students</a>
+    <a href="programs.html">📚 Programs</a>
+    <a href="founder.html">👤 Founder</a>
+    <a href="challenge.html">🏆 Wall of Fame</a>
+    <a href="https://razorpay.me/@sarlayash">Register ↗</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="pill">
+      <span class="pill-dot"></span>
+      Guided by values • Built for transformation
+    </div>
+
+    <div style="width:120px;height:120px;border-radius:16px;overflow:hidden;margin-bottom:1rem;">
+      <img src="SYLSLLPLogo.jpg" alt="SarlaYash Logo" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+
+    <h1>Learning that turns into <span>lived leadership.</span></h1>
+
+    <p class="hero-sub">
+      SarlaYash Learning Solutions LLP is inspired by the wisdom of Maa Sarla and
+      Paa Yash. We craft learning journeys where values, real-world experience,
+      and mentorship come together to shape confident, conscious professionals.
+    </p>
+
+    <div class="hero-meta">
+      <span><span class="dot"></span> Lifelong learning, not one-time workshops</span>
+      <span><span class="dot"></span> Values-first approach to leadership</span>
+      <span><span class="dot"></span> Designed for students, teams &amp; leaders</span>
+    </div>
+  </div>
+
+  <aside class="hero-right-card">
+    <strong>SarlaYash: Our Guiding Foundation</strong>
+    <p class="hero-sub">
+      Maa Sarla and Paa Yash are the spiritual architects and guiding lights of
+      SarlaYash Learning Solutions LLP.
+    </p>
+    <p class="hero-sub">
+      Their principles define our educational philosophy—focused on transformation,
+      integrity, empathy, and lifelong learning.
+    </p>
+  </aside>
+</section>
+
+<footer>
+  © <span id="year"></span>
+  <span class="brand-footer">SarlaYash Learning Solutions LLP</span>.
+  All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

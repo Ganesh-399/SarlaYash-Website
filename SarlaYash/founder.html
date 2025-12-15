@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SarlaYash – Founder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.65),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 0.85rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 14px;
+      background: conic-gradient(
+        from 180deg,
+        #f97316,
+        #facc15,
+        #22c55e,
+        #06b6d4,
+        #6366f1,
+        #f97316
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.5);
+      font-size: 0.9rem;
+      color: #020617;
+      font-weight: 800;
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 1rem;
+    }
+
+    .logo-sub {
+      font-size: 0.72rem;
+      color: #9ca3af;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #9ca3af;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      transition: 0.18s;
+    }
+
+    nav a:hover {
+      background: rgba(15, 23, 42, 0.7);
+      color: #f9fafb;
+    }
+
+    nav a.active {
+      background: linear-gradient(135deg, #f97316, #facc15);
+      color: #111827;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .page-card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 18px;
+      padding: 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      font-size: 0.96rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+
+    .founder-quote {
+      margin-top: 1.6rem;
+      padding: 1rem 1.2rem;
+      border-left: 4px solid #f97316;
+      background: rgba(249, 115, 22, 0.1);
+      font-style: italic;
+      border-radius: 8px;
+      color: #f9fafb;
+    }
+
+    .founder-contact {
+      margin-top: 1.5rem;
+    }
+
+    .founder-contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #0a66c2;
+      background: rgba(10, 102, 194, 0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .founder-contact a:hover {
+      background: rgba(10, 102, 194, 0.28);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.4rem 1rem 2.5rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      border-top: 1px solid rgba(15, 23, 42, 0.95);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
+    }
+
+    footer .brand-footer {
+      font-weight: 600;
+      background: linear-gradient(135deg, #f97316, #facc15);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark">SY</div>
+    <div>
+      <div class="logo-text-main">SarlaYash</div>
+      <div class="logo-sub">Learning • Leadership • Legacy</div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="foundation.html">Foundation</a>
+    <a href="students.html">Students</a>
+    <a href="programs.html">Programs</a>
+    <a class="active" href="founder.html">Founder</a>
+    <a href="challenge.html">Wall of Fame</a>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main>
+  <div class="page-card">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> / Founder
+    </div>
+
+    <h1>Meet Our Founder – Kapil Narula</h1>
+
+    <p>
+      Kapil Narula, our founder, upholds the legacy of <strong>Maa Sarla</strong> and
+      <strong>Paa Yash</strong>. Their principles of integrity, empathetic leadership,
+      and knowledge guide SarlaYash Learning Solutions LLP—transforming timeless
+      values into modern leadership solutions.
+    </p>
+
+    <h2>Visionary Leadership</h2>
+    <p>
+      With over two decades of experience, Kapil Narula has contributed to reshaping
+      Fortune 500 organizations and advancing learning & development initiatives.
+      His work champions innovative, human-centric approaches that enable people
+      and teams to thrive.
+    </p>
+
+    <h2>Guiding Philosophy</h2>
+    <p>
+      Kapil believes true leadership cultivates conscious growth, inspired by the
+      holistic philosophy of Maa Sarla and Paa Yash. Individuals are empowered to
+      discover inner strengths and align with a collective purpose.
+    </p>
+
+    <p>
+      His philosophy emphasizes lifelong learning, with impact measured through
+      positive transformation in lives, organizations, and communities.
+    </p>
+
+    <div class="founder-quote">
+      “Our greatest legacy is the wisdom and values we instill in others—shaping a
+      future where leadership is synonymous with service, integrity, and compassionate action.”
+    </div>
+
+    <div class="founder-contact">
+      <a href="https://www.linkedin.com/in/kapil-narula-63447026/"
+         target="_blank"
+         rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.447 20.452H17.21V14.83c0-1.342-.027-3.071-1.873-3.071-1.873 0-2.159 1.46-2.159 2.971v5.722H9.94V9h3.111v1.561h.044c.434-.82 1.494-1.684 3.073-1.684 3.287 0 3.89 2.164 3.89 4.977v6.598zM5.337 7.433a1.81 1.81 0 1 1 0-3.62 1.81 1.81 0 0 1 0 3.62zM6.956 20.452H3.717V9h3.239v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0z"/>
+        </svg>
+        Connect with our Founder on LinkedIn
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span>
+  <span class="brand-footer">SarlaYash Learning Solutions LLP</span>.
+  All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
